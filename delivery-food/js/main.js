@@ -55,6 +55,7 @@ function notAutorized() {
         login = loginInput.value;
 
         localStorage.setItem('foodDelivery', login);
+
         if (login) {
           loginInput.value = '';
         }
@@ -62,10 +63,12 @@ function notAutorized() {
           loginInput.style.backgroundColor = ('red');
           //alert('Не введен логин');
         }
+
         toggleModalAuth();
         buttonAuth.removeEventListener('click', toggleModalAuth);
         closeAuth.removeEventListener('click', toggleModalAuth);
         logInForm.removeEventListener('submit', logIn);
+
         logInForm.reset();
         checkAuth();
       }
